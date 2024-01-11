@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5" id="session">
+  <div class="row">
+    <div class="col-3"></div>
+
+    <div class="col-6 bg">
+      <p><h2 class="text-center">Entrar</h2></p>
+
+      <%= form_tag sessions_path do %>
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label">E-mail:</label>
+          <input type="email" class="form-control email" id="email" placeholder="Digite seu email" name="email">
+        </div>
+
+        <div class="mb-5">
+          <label for="password" class="form-label">Senha:</label>
+          <input type="password" class="form-control password" id="password" placeholder="Digite sua senha" name="password">
+        </div>
+
+        <div class="row">
+          <div class="mb-5 col-6">
+            <%= button_tag('Entrar', type: 'submit', class: 'btn-btn save') %>
+          </div>
+
+          <div class="mb-5 col-6">
+            <h6 class="text-right">Não possui cadastro? <%= link_to('Cadastrar-se agora', new_user_path) %></h6>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-3"></div>
+  </div>
+</div>

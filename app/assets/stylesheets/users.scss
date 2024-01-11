@@ -1,0 +1,38 @@
+.mg-top {
+  margin-top: 150px;
+}
+
+#form-user, #session {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+
+  .register {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 10px;
+    text-align: center;
+    display: block;
+  }
+
+  .bg {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  #user_name, #user_last_name, .email, .password, .password_confirmation, #user_profile, #user_profile:focus,
+  #user_name:focus, #user_last_name:focus, .email:focus, .password:focus, .password_confirmation:focus {
+    font-weight: 500;
+    font-size: 15px;
+    background-color: transparent;
+    border-radius: 24px;
+    text-align: left;
+    color: #000000;
+  }
+
+  #user_name, #user_last_name, #user_password, #user_email, #user_profile {
+    border: 1px solid #cecece;
+  }
+}

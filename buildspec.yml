@@ -1,0 +1,45 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+      
+  pre_build:
+    commands:
+      - echo Defining build tag
+      - export IMAGE_TAG=`printf %.7s $CODEBUILD_RESOLVED_SOURCE_VERSION`
+      - echo Build tag is $IMAGE_TAG
+      - echo Generating Dockerrun.aws.json
+      - sh version_locker.sh
+      - sh version_app.sh
+      - cat Dockerrun.aws.json
+      - echo Starting Docker build
+      - docker-compose up -d db-lotery
+      - docker-compose build lotery
+      - echo Starting tests
+      - docker-compose run --rm lotery bundle install
+      - docker-compose run --rm lotery yarn install
+      - docker-compose run --rm lotery rake db:create
+      - docker-compose run --rm lotery rake db:migrate
+      - docker-compose run --rm lotery rake db:create RAILS_ENV=test
+      - docker-compose run --rm lotery rake db:migrate RAILS_ENV=test
+      - docker-compose run --rm lotery rspec --failure-exit-code 1
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --region us-east-2 --no-include-email)
+      - docker tag src_lotery:latest 386582416965.dkr.ecr.us-east-2.amazonaws.com/message:$IMAGE_TAG
+      - echo Pushing the Docker image...
+      - docker push 386582416965.dkr.ecr.us-east-2.amazonaws.com/message:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Comandos para o PostBuild iniciado em `date`...
+      - echo PostBuild completado em `date`
+artifacts:
+  files:
+    - Dockerrun.aws.json
+    - .platform/**/*

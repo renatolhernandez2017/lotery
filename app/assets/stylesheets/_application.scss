@@ -1,0 +1,15 @@
+@charset 'UTF-8';
+
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css';
+
+// Assets exclusivos da Agenda...
+@import 'element/*';
+@import 'cookies_eu';
+@import 'login';
+@import 'header';
+@import 'index';
+@import 'shared/flash_message';
+@import 'users';

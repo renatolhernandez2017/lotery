@@ -1,0 +1,8 @@
+<% content_for(:sidebar_home) { 'true' } %>
+<%= render 'layouts/header', title: 'Principal', subtitle: 'Home' %>
+
+<% if current_user.profile == 'admin' %>
+  <%= render 'index_admin' %>
+<% else %>
+  <%= render 'index' %> 
+<% end %>

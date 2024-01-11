@@ -1,0 +1,21 @@
+# This is a sample build configuration for Docker.
+# Check our guides at https://confluence.atlassian.com/x/O1toN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: atlassian/default-image:latest
+# Imagem genérica da atlassian não funcionou o git com https
+image: webgoal/generic_ror
+
+# enable Docker for your repository
+# options:
+#   docker: true
+
+pipelines:
+  default:
+    - step:
+        script:
+          - echo Envio para AWS Code Commit
+          - git config --global push.default simple
+          - git remote add aws https://$AWS_GIT_USER:$AWS_GIT_PASS@$AWS_GIT_REPO
+          - git push --no-thin -f -u aws master

@@ -1,0 +1,252 @@
+body {
+  overflow: hidden;
+}
+
+.custom-file-label::after {
+  content: 'Procurar arquivo' !important;
+  background-color: #74C5BE;
+  color: #000000;
+}
+
+.no-file {
+  position: relative;
+  top: -5px;
+}
+
+.card-messages {
+  position: relative;
+  height: 575px;
+  width: 98%;
+  border: 1px solid #51515133;
+  border-radius: 10px;
+  background-color: #51515133;
+  margin-top: 20px;
+}
+
+.nav-tabs, .nav-tabs:focus {
+  border-bottom: 0;
+  background-color: #51515100;
+  color: #000000;
+
+  .nav-link, .nav-link.active {
+    color: #000000;
+    background-color: #51515100;
+    border: 0;
+  }
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #515151;
+  margin-left: 25px;
+}
+
+.navigate-next {
+  position: relative;
+  top: 5px;
+}
+
+.campaign-name, .campaign-message {
+  display: block;
+}
+
+.campaign-name {
+  margin-top: 30px;
+}
+
+.campaign-message {
+  margin-top: 50px;
+}
+
+.campaign-phones, .campaign-file, .campaign-total {
+  margin-top: 30px;
+  display: block;
+}
+
+.total {
+  float: left;
+}
+
+.send {
+  float: right;
+}
+
+.total, .send {
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#campaign_name, #campaign_message, #campaign_message_file, #campaign_phones {
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #000000B2;
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .card-messages {
+    width: 92%;
+    height: 490px;
+  }
+
+  .alert {
+    .material-symbols-outlined {
+      left: -50px !important;
+    }
+
+    .string, .hash {
+      left: -25px !important;
+    }
+  }
+}
+
+#smartphone {
+  .phone {
+    width: 420px;
+    max-width: 600px;
+    height: 568px;
+    min-width: 100px;
+    background: #afbfc27d;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10px;
+    position: relative;
+    border-bottom-left-radius: 0;
+    left: -100px;
+    border-bottom-right-radius: 0;
+  }
+
+  .screen {
+    width: calc(100% - 35px);
+    height: 560px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 50px;
+    overflow: hidden !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    top: 15px;
+  }
+
+  .top {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    background: #ecf0f08a;
+    overflow: hidden;
+    border-bottom: 1px solid hsla(0, 0%, 43%, 0.2);
+  }
+
+  .account-circle {
+    left: 160px;
+    top: 50px;
+    position: absolute;
+    font-size: 60px;
+    color: #b5b5b5;
+  }
+
+  .hour, .signal_cellular_alt, .wifi, .battery_horiz_075 {
+    position: relative;
+    top: 13px;
+  }
+
+  .signal_cellular_alt, .wifi, .battery_horiz_075 {
+    font-size: 22px;
+  }
+
+  .wifi {
+    top: 6px !important;
+  }
+
+  .dock-left {
+    position: relative;
+    left: 30px;
+
+    .hour {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+  .dock-right {
+    display: flex;
+    padding: 5px 15px 0 0;
+  }
+
+  .dock {
+    position: relative;
+    background-color: #afbfc27d;
+    height: 40px;
+    width: 200px;
+    left: 20px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+
+    .speaker {
+      width: 60px;
+      height: 8px;
+      background: #000000;
+      border-radius: 7px;
+      margin: 10px 0 17px 50px;
+      position: relative;
+    }
+
+    .camera {
+      width: 12px;
+      height: 12px;
+      background: #000000;
+      border-radius: 50%;
+      position: relative;
+      margin: -27px 0 0 125px;
+    }
+  }
+
+  .content {
+    position: relative;
+    margin: 50px 20px;
+
+    .message {
+      border-radius: 24px;
+    }
+  }
+
+  #message_phone {
+    overflow-y: hidden;
+    resize: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}
+
+#painel-admin {
+  .users, .sales, .definir {
+    text-decoration: none;
+  }
+
+  .person_add {
+    margin-right: 10px;
+  }
+
+  .home {
+    color: #515151;
+    font-size: 30px;
+    position: relative;
+    top: 5px;
+  }
+}

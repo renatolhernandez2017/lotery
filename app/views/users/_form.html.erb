@@ -1,0 +1,50 @@
+<div class="row mg-top" id="form-user">
+  <div class="row mt-5 mb-5">
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 bg card-body">
+      <span class="register">Cadastro</span>
+      <hr>
+
+      <%= simple_form_for(user, url: url) do |f| %>
+        <div class="row mt-4">
+          <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <%= f.input :name, label: 'Nome' %>
+          </div>
+
+          <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+
+          <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <%= f.input :last_name, label: 'Sobrenome' %>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <%= f.input :password, label: 'Senha' %>
+          </div>
+
+          <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <%= f.input :email, label: 'E-mail' %>
+          </div>
+
+          <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8"></div>
+
+          <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <%= button_tag('Salvar', type: 'submit', class: 'btn-btn save') %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+  </div>
+</div>

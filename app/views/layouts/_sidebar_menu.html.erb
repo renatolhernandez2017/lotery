@@ -1,0 +1,11 @@
+<li class="header <%= 'active' if content_for?(sidebar_content_for) %>" data-toggle="tooltip" data-placement="right" title="<%= sidebar_title.upcase %>">
+  <a href="<%= sidebar_path %>">
+    <div class="icon">
+      <i class="<%= sidebar_icon %> fa-fw"></i>
+    </div>
+
+    <div class="content">
+      <span><%= sidebar_title %></span>
+    </div>
+  </a>
+</li>

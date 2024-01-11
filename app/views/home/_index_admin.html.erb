@@ -1,0 +1,14 @@
+<div class="container-fluid mt-5 pt-5 ml-3" id="painel-admin">
+  <div class="row mt-4">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <%= link_to('<span class="material-symbols-outlined home">home</span>'.html_safe, home_path) %>
+      <span class="title">ADMINISTRAÇÃO > PAINEL PRINCIPAL</span>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <%= link_to("<span class='title'>Usuários</span>".html_safe, users_path, class: 'users') %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+.header {
+  font-family: 'Montserrat', sans-serif;
+  height: 100px;
+  background-color: #515151;
+  color: #ffffff;
+
+  .options {
+    align-self: center;
+    text-align: center;
+  }
+
+  .material-symbols-outlined {
+    font-size: 30px !important;
+  }
+
+  .texts {
+    position: relative;
+    top: -10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .price {
+    color: #ff3e3e;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    .logo {
+      width: 100%;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    .material-symbols-outlined {
+      font-size: 20px !important;
+    }
+
+    .texts {
+      font-size: 15px;
+      top: -5px;
+    }
+
+    .options-row {
+      text-align: center;
+    }
+
+    .cell {
+      margin-top: 12px;
+      margin-left: -10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 997px) {
+  .logo {
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+  }
+
+  .card-messages {
+    height: 720px !important;
+    width: 96% !important;
+  }
+}

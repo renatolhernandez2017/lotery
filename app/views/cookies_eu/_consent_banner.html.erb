@@ -1,0 +1,49 @@
+<% if cookies.kind_of? ActionDispatch::Cookies::CookieJar %>
+  <% if cookies && cookies['cookie_eu_consented'] != 'true' %>
+    <div class="cookies-eu js-cookies-eu"
+         <%= "dir=rtl" if I18n.exists?('template.cookies_eu.direction', I18n.locale) &&
+            I18n.t("template.cookies_eu.direction") == "rtl"
+          %>>
+      <span class="cookies-eu-content-holder">
+        <span>
+          Esta plataforma utiliza cookies garantindo uma melhor
+          experiência ao usuário. Se quiser saber mais, basta acessar nossas
+
+          <strong>
+            <%= link_to('Política de Privacidade.', "#", class: "privacy_policy_color",
+                data: { toggle: "modal", target: "#privacy_policy" })
+            %>
+
+            <div class="modal fade" id="privacy_policy">
+              <%= render "cookies_eu/privacy_policy" %>
+            </div>
+          </strong>
+            e
+          <strong>
+            <%= link_to('Termos de Uso.', "#", class: "privacy_policy_color",
+                data: { toggle: "modal", target: "#terms_use" })
+            %>
+
+            <div class="modal fade" id="terms_use">
+              <%= render "cookies_eu/terms_use" %>
+            </div>
+          </strong>
+        </span>
+      </span>
+
+      <span class="cookies-eu-button-holder">
+        <button class="cookies-eu-ok js-cookies-eu-ok">
+          <span>Aceito</span>
+        </button>
+
+        <% if defined?(link).present? %>
+          <a href="<%= link %>" class="cookies-eu-link" target="<%= defined?(target).present? ? target : '' %>">
+            <%= t('template.cookies_eu.learn_more') %>
+          </a>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+<% else %>
+  <% raise Exception.new "'cookies' is a reserved Rails class, please rename your method" %>
+<% end %>
