@@ -1,0 +1,27 @@
+<div class="container container-mini">
+  <div class="breadcrumb">
+    <%%= link_to t('view.root_action_html'), root_path %>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <%%= link_to t('view.index_action', model_name: <%= class_name %>.model_name.human.pluralize), <%= plural_table_name %>_path %>
+  </div>
+  <div class="read_wrapper">
+    <div class="card">
+      <div class="jumbotron">
+        <h1><%%= <%= class_name %>.model_name.human %></h1>
+      </div>
+      <div class="card-block">
+        <div class="row">
+          <div class="col-md-12">
+            <%- attributes.each_with_index do |attribute, index| -%>
+            <h3><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %></h3>
+            <p><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
+            <%- end -%>
+            <div class="form-actions">
+              <%%= link_to t('view.cancel_action_html', model_name: <%= class_name %>.model_name.human), <%= plural_table_name %>_path, class: "btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

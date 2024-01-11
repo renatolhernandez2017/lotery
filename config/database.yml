@@ -1,0 +1,21 @@
+default: &default
+  host: dbhost
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  user: user
+development:
+  <<: *default
+  database: lotery_development
+  password:
+test:
+  <<: *default
+  database: lotery_test
+staging:
+  <<: *default
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
+  database: <%= ENV['POSTGRESQL_DB'] ||= 'lotery_staging' %>
+production:
+  <<: *default
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
+  database: <%= ENV['POSTGRESQL_DB'] ||= 'lotery_production' %>

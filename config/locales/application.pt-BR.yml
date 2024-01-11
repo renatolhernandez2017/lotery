@@ -1,0 +1,111 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+pt-BR:
+  controller:
+    successfully_created: "%{model_name} adicionado com sucesso."
+    successfully_updated: "%{model_name} editado com sucesso."
+    successfully_destroyed: "%{model_name} excluído com sucesso."
+
+  view:
+    template:
+      copy: Copiar
+      create_your_marketplace: Crie seu Marketplace
+      open: Abrir
+      back: Voltar
+      close: Fechar
+      date: Data
+      delete: Excluir
+      edit: Editar
+      edit_schedule: Editar Horário
+      end: Fim
+      save: Salvar
+      start: Início
+      text: Selecione o horário de trabalho (Horário de Brasília)
+      statuses:
+        created: Criada
+        canceled: Cancelado
+        waiting: Aguardando pagamento
+        paid: Pago
+        not_paid: Recusado
+        pending: Pendente
+        in_analysis: Em análise
+        partially_paid: Particalmente pago
+        refunded: Reembolsado
+        expired: Expirado
+        authorized: Autorizado
+        in_protest: Em protesto
+        chargeback: Estorno
+        draft: Rascunho
+
+    # breadcrumbs
+    root_action_html: "<i class='fa fa-home' aria-hidden='true'></i>"
+    index_action: "%{model_name}"
+
+    # actions
+    edit_action_html: "Editar %{model_name} <i class='fa fa-plus' aria-hidden='true'></i>"
+    update_action_html: "Editar %{model_name} <i class='fa fa-plus' aria-hidden='true'></i>"
+    new_action_html: "Adicionar %{model_name} <i class='fa fa-plus' aria-hidden='true'></i>"
+    create_action_html: "Adicionar %{model_name} <i class='fa fa-plus' aria-hidden='true'></i>"
+    submit_action_html: "Salvar %{model_name} <i class='fa fa-check' aria-hidden='true'></i>"
+    cancel_action_html: "Voltar para listagem <i class='fa fa-close' aria-hidden='true'></i>"
+    edit_action_hint: "Editar"
+    view_action_hint: "Visualizar"
+    delete_action_hint: "Excluir"
+    delete_action_confirmation: "Deseja realmente excluir?"
+
+    # blank
+    blank_message: "Nenhum %{model_name} cadastrado."
+
+  activerecord:
+      models:
+        product: Produto
+      attributes:
+        product:
+          name: "Nome"
+          description: "Descrição"
+          value: "Valor"
+        sale:
+          statuses:
+            created: Criada
+            canceled: Cancelado
+            waiting: Aguardando pagamento
+            paid: Pago
+            not_paid: Recusado
+            pending: Pendente
+            in_analysis: Em análise
+            partially_paid: Particalmente pago
+            refunded: Reembolsado
+            expired: Expirado
+            authorized: Autorizado
+            in_protest: Em protesto
+            chargeback: Estorno
+            draft: Rascunho

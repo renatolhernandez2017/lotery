@@ -1,0 +1,40 @@
+version: '3'
+
+# networks:
+#   default:
+#     external:
+#       name: message
+
+volumes:
+  gems-lotery:
+
+services:
+  lotery:
+    build: .
+    environment:
+      TZ: "America/Sao_Paulo"
+      DATABASE_URL: "postgresql://postgres@dbhost/"
+      RAILS_ENV: "development"
+      AWS_ACCESS_KEY_ID: "AKIARDVW3PX5XX5BSKFD"
+      AWS_SECRET_ACCESS_KEY: "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"
+      TWILIO_ACCOUNT_SID: "AC0b1934a37518c3bb9d6082a4c6e82d76"
+      TWILIO_AUTH_TOKEN: "e33256d29dc7737e7dab7442c306d1a6"
+      TWILIO_PHONE_NUMBER: "+15092851665"
+      TOPIC_ARN_AWS: "arn:aws:sns:us-east-2:076619152891:SMS"
+    links:
+      - db-lotery:dbhost
+    ports:
+      - "3000:3000"
+    volumes:
+      - gems-lotery:/usr/local/bundle
+      - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ./:/usr/src/app
+    command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
+
+  db-lotery:
+    image: postgres:9.4.9
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_DB: lotery_development
+    ports:
+      - "5444:5438"
